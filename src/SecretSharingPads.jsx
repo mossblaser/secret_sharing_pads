@@ -152,7 +152,7 @@ function Instructions({padId, padLetter}) {
 		
 		<p><strong>Alternative using spreadsheet:</strong> Copy the three-digit
 		codes for your two pads into columns A and B of your spreadsheet. Type
-		<code>=MOD(A1+B1)</code> into cell C1 and <code>=CHAR(C1)</code> into cell
+		<code>=MOD(A1+B1, 1000)</code> into cell C1 and <code>=CHAR(C1)</code> into cell
 		D1. Use auto-fill to repeat the formulae in columns C and D over the
 		remaining rows.</p>
 		
@@ -225,6 +225,16 @@ function PrintHint() {
 	</div>;
 }
 
+import {cryptoRandInt, generateSecretSharingPadData} from "./encrypt.js";
+
+const allEncryptedSecrets = generateSecretSharingPadData([
+	{name: "Foo", description: "This password is all 'x's", secret: "xxxxxxxxxxxxxxxxxxxxx", pad: true},
+	{name: "Foo", description: "", secret: "1234", pad: true},
+	{name: "Foo", description: "", secret: "1234", pad: true},
+	{name: "Foo", description: "", secret: "1234", pad: true},
+], ["A", "B", "C", "D"]);
+
+console.log(allEncryptedSecrets);
 
 // Demo!
 import {render} from "preact";
@@ -236,93 +246,5 @@ render(<SecretSharingPads
 		"B": "green",
 		"C": "blue",
 	}}
-	allEncryptedSecrets={[
-		{
-			letter: "A",
-			encryptedSecrets: [
-				{
-					name: "Foo",
-					description: "Bar baz qux.",
-					encryptedSecret: [
-						{letter: "B", code: [1, 12, 123, 1, 12, 123, 1, 12, 123, 1, 12, 123, 1, 12, 123, ]},
-						{letter: "C", code: [1, 12, 123]},
-					]
-				},
-				{
-					name: "Bar",
-					description: "Bar baz qux.",
-					encryptedSecret: [
-						{letter: "B", code: [1, 12, 123]},
-						{letter: "C", code: [1, 12, 123]},
-					]
-				},
-				{
-					name: "Bar",
-					description: "Bar baz qux.",
-					encryptedSecret: [
-						{letter: "B", code: [1, 12, 123]},
-						{letter: "C", code: [1, 12, 123]},
-					]
-				},
-				{
-					name: "Bar",
-					description: "Bar baz qux.",
-					encryptedSecret: [
-						{letter: "B", code: [1, 12, 123]},
-						{letter: "C", code: [1, 12, 123]},
-					]
-				},
-				{
-					name: "Bar",
-					description: "Bar baz qux.",
-					encryptedSecret: [
-						{letter: "B", code: [1, 12, 123]},
-						{letter: "C", code: [1, 12, 123]},
-					]
-				},
-			]
-		},
-		{
-			letter: "B",
-			encryptedSecrets: [
-				{
-					name: "Foo",
-					description: "Bar baz qux.",
-					encryptedSecret: [
-						{letter: "A", code: [1, 12, 123]},
-						{letter: "C", code: [1, 12, 123]},
-					]
-				},
-				{
-					name: "Bar",
-					description: "Bar baz qux.",
-					encryptedSecret: [
-						{letter: "A", code: [1, 12, 123]},
-						{letter: "C", code: [1, 12, 123]},
-					]
-				},
-			]
-		},
-		{
-			letter: "C",
-			encryptedSecrets: [
-				{
-					name: "Foo",
-					description: "Bar baz qux.",
-					encryptedSecret: [
-						{letter: "A", code: [1, 12, 123]},
-						{letter: "B", code: [1, 12, 123]},
-					]
-				},
-				{
-					name: "Bar",
-					description: "Bar baz qux.",
-					encryptedSecret: [
-						{letter: "A", code: [1, 12, 123]},
-						{letter: "B", code: [1, 12, 123]},
-					]
-				},
-			]
-		},
-	]}
+	allEncryptedSecrets={allEncryptedSecrets}
 />, document.getElementById("root"));
