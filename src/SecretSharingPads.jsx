@@ -2,30 +2,31 @@ import {h} from "preact";
 
 import "./SecretSharingPads.less";
 
-import printerIcon from "./images/printer.svg";
-
-import figureStep1 from "./images/step_1.svg";
-import figureStep2 from "./images/step_2.svg";
-import figureStep3 from "./images/step_3.svg";
-
+import {
+	printerIcon,
+	instructionsStep1,
+	instructionsStep2,
+	instructionsStep3,
+} from "./images.js";
 
 /**
  * A complete set of secret sharing pads, ready for printing.
  *
  * Props:
  * * padId: The unique ID identifying the set of secret sharing pads.
- * * padLetter: The letter for this pad.
  * * padColours: A lookup {letter: colour, ...} giving the colour to use for
  *   each pad letter.
+ * * description: Any introductory notes from the pad author to display.
  * * allEncryptedSecrets: An array of {letter, [{name, description,
  *   encryptedSecret: [{letter,  code: [n, ...]}, ...]}, ...]} objects.  For
  *   each lettered pad, gives the secret to be displayed gives the name and
  *   description string and encrypted secrets. Each encrypted secret is given
  *   as an array of encoded values and their associated letters.
  */
-function SecretSharingPads({
+export default function SecretSharingPads({
 	padId,
 	padColours,
+	description,
 	allEncryptedSecrets,
 }) {
 	return <div className="SecretSharingPads">
@@ -38,6 +39,7 @@ function SecretSharingPads({
 					padId={padId}
 					padLetter={letter}
 					padColours={padColours}
+					description={description}
 					encryptedSecrets={encryptedSecrets}
 				/>
 			)
@@ -45,6 +47,14 @@ function SecretSharingPads({
 	</div>;
 }
 
+
+/**
+ * Given a string with paragraphs separated by newlines, output each in a new
+ * <p> tag.
+ */
+function stringToParagraphs(str) {
+	return str.trim().split(/[\n]+/).map(line => <p>{line}</p>);
+}
 
 
 /**
@@ -55,6 +65,7 @@ function SecretSharingPads({
  * * padLetter: The letter for this pad.
  * * padColours: A lookup {letter: colour, ...} giving the colour to use for
  *   each pad letter.
+ * * description: Any introductory notes from the pad author to display.
  * * encryptedSecrets: An array of {name, description, encryptedSecret: [{letter,  code: [n,
  *   ...]}, ...]} objects.  For each secret to be displayed gives the name and
  *   description string and encrypted secrets. Each encrypted secret is given
@@ -64,6 +75,7 @@ function SecretSharingPad({
 	padId,
 	padLetter,
 	padColours,
+	description,
 	encryptedSecrets,
 }) {
 	const colour = padColours[padLetter];
@@ -74,7 +86,7 @@ function SecretSharingPad({
 				padLetter={padLetter}
 				colour={colour}
 			/>
-			<p>Some notes here from the author of the pad...</p>
+			{stringToParagraphs(description)}
 			<Instructions padId={padId} padLetter={padLetter} />
 			<hr />
 			<EncryptedSecrets
@@ -131,19 +143,19 @@ function Instructions({padId, padLetter}) {
 		<h2>Decryption instructions</h2>
 		<div className="steps">
 			<div className="step">
-				<img src={figureStep1} />
+				<img src={instructionsStep1} />
 				<p>Obtain another secret sharing pad with the same pad number as this
 				one, but different letter, printed at the top right. Find the secret
 				you want to decrypt on both pads.</p>
 			</div>
 			<div className="step">
-				<img src={figureStep2} />
+				<img src={instructionsStep2} />
 				<p>Find the list of three-digit codes printed next to the letter of
 				the other pad. Add the codes on the first pad to the codes on the
 				second pad and write down the answers.</p>
 			</div>
 			<div className="step">
-				<img src={figureStep3} />
+				<img src={instructionsStep3} />
 				<p>Use the table above to turn the last three digits of each sum
 				into a character. Stop when you find a sum whose last three digits are
 				'000'. The remaining codes just hide the secret's real length.</p>
@@ -199,7 +211,7 @@ function EncryptedSecrets({padColours, encryptedSecrets}) {
 function EncryptedSecret({number, name, description, encryptedSecret, padColours}) {
 	return <article className="EncryptedSecret">
 		<h2>Secret {number}: {name}</h2>
-		{description ? <p>{description}</p> : null}
+		{stringToParagraphs(description)}
 		<div className="encrypted-secrets">
 			{encryptedSecret.map(({letter, code}) => <div className="secret">
 				<div class="letter" style={{
@@ -219,32 +231,9 @@ function EncryptedSecret({number, name, description, encryptedSecret, padColours
 
 function PrintHint() {
 	return <div className="PrintHint">
-		<button onClick={() => print()} title="Print all pads">
+		<button onClick={() => window.print()} title="Print all pads">
 			<img src={printerIcon} alt="Print" />
 		</button>
+		<span>Warning: These pads will be shown only once.</span>
 	</div>;
 }
-
-import {cryptoRandInt, generateSecretSharingPadData} from "./encrypt.js";
-
-const allEncryptedSecrets = generateSecretSharingPadData([
-	{name: "Foo", description: "This password is all 'x's", secret: "xxxxxxxxxxxxxxxxxxxxx", pad: true},
-	{name: "Foo", description: "", secret: "1234", pad: true},
-	{name: "Foo", description: "", secret: "1234", pad: true},
-	{name: "Foo", description: "", secret: "1234", pad: true},
-], ["A", "B", "C", "D"]);
-
-console.log(allEncryptedSecrets);
-
-// Demo!
-import {render} from "preact";
-render(<SecretSharingPads
-	padId={123456}
-	padLetter="A"
-	padColours={{
-		"A": "red",
-		"B": "green",
-		"C": "blue",
-	}}
-	allEncryptedSecrets={allEncryptedSecrets}
-/>, document.getElementById("root"));

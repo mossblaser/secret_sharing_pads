@@ -120,8 +120,8 @@ describe("generateSecretSharingPadData", function() {
 	
 	test("every sheet has all secrets for every other sheet", function() {
 		const secrets = [
-			{name: "s1", description: "", secret: "foo", pad: false},
-			{name: "s2", description: "", secret: "bar", pad: true},
+			{name: "s1", description: "", secret: "foo", obscureLength: false},
+			{name: "s2", description: "", secret: "bar", obscureLength: true},
 		];
 		const letters = ["A", "B", "C", "D"]
 		const padData = generateSecretSharingPadData(secrets, letters);
@@ -134,8 +134,8 @@ describe("generateSecretSharingPadData", function() {
 	
 	test("padding option is obeyed", function() {
 		const secrets = [
-			{name: "s1", description: "", secret: "foo", pad: false},
-			{name: "s2", description: "", secret: "bar", pad: true},
+			{name: "s1", description: "", secret: "foo", obscureLength: false},
+			{name: "s2", description: "", secret: "bar", obscureLength: true},
 		];
 		const letters = ["A", "B"]
 		
@@ -160,8 +160,8 @@ describe("generateSecretSharingPadData", function() {
 	
 	test("check sheets feature correct letters", function() {
 		const secrets = [
-			{name: "s1", description: "", secret: "foo", pad: false},
-			{name: "s2", description: "", secret: "bar", pad: true},
+			{name: "s1", description: "", secret: "foo", obscureLength: false},
+			{name: "s2", description: "", secret: "bar", obscureLength: true},
 		];
 		const letters = ["A", "B", "C"]
 		
@@ -181,8 +181,8 @@ describe("generateSecretSharingPadData", function() {
 	
 	test("check decoding works as expected", function() {
 		const secrets = [
-			{name: "s1", description: "", secret: "foo", pad: false},
-			{name: "s2", description: "", secret: "bar", pad: true},
+			{name: "s1", description: "", secret: "foo", obscureLength: false},
+			{name: "s2", description: "", secret: "bar", obscureLength: true},
 		];
 		const letters = ["A", "B", "C"]
 		

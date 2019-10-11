@@ -7,20 +7,21 @@
  * Generate unbiased random integers between lo and hi (inclusive) using
  * Crypto.getRandomValues().
  *
- * Range is limited to 65535 (16 bits).
+ * Range is limited to 30-bits (~1 billion).
  */
 export function cryptoRandInt(lo, hi) {
 	const range = hi - lo + 1;
 	
-	const randomMax = Math.floor((1<<16) / range) * range;
-	const a = new Uint16Array(1);
+	const mask = (1<<30) - 1;
+	const randomMax = Math.floor((1<<30) / range) * range;
+	const a = new Uint32Array(1);
 	let firstIteration = true;
-	while (a[0] >= randomMax || firstIteration) {
+	while (a[0] & mask >= randomMax || firstIteration) {
 		firstIteration = false;
 		window.crypto.getRandomValues(a);
 	}
 	
-	let value = a[0] % range;
+	let value = (a[0] & mask) % range;
 	
 	return lo + value;
 }
@@ -71,7 +72,7 @@ export function randomlyPadString(s) {
 /**
  * Generate a datastructure defining a set of secret sharing pads.
  *
- * @param secrets An array of {name, description, secret, pad} objects defining
+ * @param secrets An array of {name, description, secret, obscureLength} objects defining
  *        the complete set of secrets to encrypt.
  * @param letters An array of letters to use to identify the pads over which
  *        the secrets will be shared.
@@ -102,9 +103,9 @@ export function generateSecretSharingPadData(secrets, letters) {
 	}));
 	
 	for (let secretNo = 0; secretNo < secrets.length; secretNo++) {
-		let {name, description, secret, pad} = secrets[secretNo];
+		let {name, description, secret, obscureLength} = secrets[secretNo];
 		
-		if (pad) {
+		if (obscureLength) {
 			secret = randomlyPadString(secret);
 		}
 		
