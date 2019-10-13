@@ -151,8 +151,8 @@ function Instructions({padId, padLetter}) {
 			<div className="step">
 				<img src={instructionsStep2} />
 				<p>Find the list of three-digit codes printed next to the letter of
-				the other pad. Add the codes on the first pad to the codes on the
-				second pad and write down the answers.</p>
+				the other pad. Working left-to-right, add the codes on the first pad to
+				the codes on the second pad and write down the answers.</p>
 			</div>
 			<div className="step">
 				<img src={instructionsStep3} />
