@@ -21,7 +21,7 @@ function createPad(numberOfPads, description, secrets) {
 	// Create window for generated pads
 	const padWindow = window.open("", padId);
 	padWindow.document.write("<html><head></head><body></body></html>")
-	padWindow.document.title = `Secret Sharing Pads ${padId}{${letters.join(",")}}`;
+	padWindow.document.title = `Secret Sharing Pad ${padId}`;
 	const padWindowHead = padWindow.document.getElementsByTagName("head")[0];
 	const padWindowBody = padWindow.document.getElementsByTagName("body")[0];
 	

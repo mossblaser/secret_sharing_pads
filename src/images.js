@@ -11,6 +11,8 @@ function bufferToURL(buffer) {
 	return `data:image/svg+xml;base64,${buffer.toString('base64')}`;
 }
 
+export const logoWithText = bufferToURL(fs.readFileSync(__dirname + "/images/logo_with_text.svg"));
+
 export const printerIcon = bufferToURL(fs.readFileSync(__dirname + "/images/printer.svg"));
 export const instructionsStep1 = bufferToURL(fs.readFileSync(__dirname + "/images/step_1.svg"));
 export const instructionsStep2 = bufferToURL(fs.readFileSync(__dirname + "/images/step_2.svg"));

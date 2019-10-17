@@ -3,6 +3,7 @@ import {h} from "preact";
 import "./SecretSharingPads.less";
 
 import {
+	logoWithText,
 	printerIcon,
 	instructionsStep1,
 	instructionsStep2,
@@ -108,7 +109,7 @@ function SecretSharingPad({
 function Header({padId, padLetter, colour}) {
 	return <header className="Header">
 		<div className="inner">
-			<h1>Secret Sharing Pad</h1>
+			<h1><img src={logoWithText} alt="Secret Sharing Pad"/></h1>
 			<div class="pad-id">
 				Pad number:
 				<PadIdBadge
@@ -162,16 +163,16 @@ function Instructions({padId, padLetter}) {
 			</div>
 		</div>
 		
-		<p><strong>Alternative using spreadsheet:</strong> Copy the three-digit
-		codes for your two pads into columns A and B of your spreadsheet. Type
-		<code>=MOD(A1+B1, 1000)</code> into cell C1 and <code>=CHAR(C1)</code> into cell
-		D1. Use auto-fill to repeat the formulae in columns C and D over the
-		remaining rows.</p>
-		
 		<p><strong>Troubleshooting:</strong> The last three digits of summed codes
 		should be either 000 or between 032 and 126. If this is not the case, check
 		the pad numbers match and that you're looking at the correct list of
-		codes.</p>
+		codes. Check your steps against the example in the pictures above.</p>
+		
+		<p><strong>Using spreadsheet (optional):</strong> Copy the three-digit
+		codes for your two pads into columns A and B of your spreadsheet. Type{" "}
+		<code>=MOD(A1+B1, 1000)</code> into cell C1 and <code>=CHAR(C1)</code> into cell
+		D1. Use auto-fill to repeat the formulae in columns C and D over the
+		remaining rows.</p>
 	</div>;
 }
 

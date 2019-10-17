@@ -2,6 +2,7 @@ import {h} from "preact";
 import {useState, useReducer} from "preact/hooks";
 
 import {
+	logoWithText,
 	examplePads,
 	upIcon,
 	downIcon,
@@ -299,7 +300,7 @@ export default function SecretEntryForm({onCreatePad}) {
 	
 	return <Page><div className="SecretEntryForm">
 		<div className="section introduction">
-			<h1>Secret Sharing Pad Creator</h1>
+			<h1><img src={logoWithText} alt="Secret Sharing Pad"/></h1>
 			
 			<img src={examplePads} alt="Four sample secret sharing pads"/>
 			
@@ -307,22 +308,18 @@ export default function SecretEntryForm({onCreatePad}) {
 			and share.</p>
 			
 			<p>Secret sharing pads are a secure way to share important secret
-			information, such as passwords, with close friends, colleagues and
-			family for use in the event of an emergency.</p>
+			information, such as passwords, with close friends and family for safe
+			keeping or use in the event of an emergency.</p>
 			
 			<p>Each secret sharing pad contains encrypted copies of your secrets
 			which, alone, cannot be read. However, when any two pads from the same
-			set are brought together, the secrets may be easily decrypted using no
-			more than a pen and paper.</p>
+			set are brought together, the secrets can be decrypted using pen and
+			paper using the provided instructions.</p>
 			
-			<p>To create a set of secret sharing pads, enter the secrets into the
-			boxes below. When you're finished, choose how many pads you would like to
-			create and click the 'Create Secret Sharing Pads' button. Each pad
-			includes a set of decryption instructions and encrypted copies of every
-			secret.</p>
+			<p>Enter the secrets to encrypt below and choose how many pads you would
+			like to create and click 'Create Secret Sharing Pads'.</p>
 			
-			<p><i>Nothing entered into this page is stored on your computer or sent over
-			the internet.</i></p>
+			<p><i>Secrets entered here are not stored or sent over the internet.</i></p>
 		</div>
 		<div className="section description">
 			<label>
@@ -345,12 +342,13 @@ export default function SecretEntryForm({onCreatePad}) {
 			<div className="hints">
 				<strong>Remember:</strong>
 				<ul>
-					<li>Any two of the pads you create can be used to decrypt all of the
-					secrets. If any two are stored or carried together, appropriate care
-					must be taken.</li>
-					
-					<li>Every set of secret sharing pads is unique and incompatible with
+					<li>Sets of secret sharing pads are unique and incompatible with
 					previously created pads.</li>
+					
+					<li>Take care when storing or carrying two or more pads at once.</li>
+					
+					<li>Secret sharing pads do not provide protection from targeted,
+					simultaneous theft of multiple pads.</li>
 				</ul>
 			</div>
 			
