@@ -20,7 +20,7 @@ secret sharing pads to print out.
 
 <p align="center">
 	<img
-		src="./screenshots/summary.svg"
+		src="./screenshots/summary.png"
 		alt="A browser showing the secret sharing pad creator and a stack of secret sharing pads."
 	/>
 </p>
