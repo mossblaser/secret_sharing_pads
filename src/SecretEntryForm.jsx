@@ -2,8 +2,7 @@ import {h} from "preact";
 import {useState, useReducer} from "preact/hooks";
 
 import {
-	logoWithText,
-	examplePads,
+	logoWithTextCreator,
 	upIcon,
 	downIcon,
 	deleteIcon,
@@ -300,33 +299,19 @@ export default function SecretEntryForm({onCreatePad}) {
 	
 	return <Page><div className="SecretEntryForm">
 		<div className="section introduction">
-			<h1><img src={logoWithText} alt="Secret Sharing Pad"/></h1>
+			<h1><img className="logo" src={logoWithTextCreator} alt="Secret Sharing Pad"/></h1>
 			
-			<img src={examplePads} alt="Four sample secret sharing pads"/>
-			
-			<p>Use this page to create your own set of secret sharing pads to print
-			and share.</p>
-			
-			<p>Secret sharing pads are a secure way to share important secret
-			information, such as passwords, with close friends and family for safe
-			keeping or use in the event of an emergency.</p>
-			
-			<p>Each secret sharing pad contains encrypted copies of your secrets
-			which, alone, cannot be read. However, when any two pads from the same
-			set are brought together, the secrets can be decrypted using pen and
-			paper using the provided instructions.</p>
-			
-			<p>Enter the secrets to encrypt below and choose how many pads you would
-			like to create and click 'Create Secret Sharing Pads'.</p>
-			
-			<p><i>Secrets entered here are not stored or sent over the internet.</i></p>
+			<div className="warning">
+				<strong>Information entered below will not be stored or leave your
+				computer.</strong>
+			</div>
 		</div>
 		<div className="section description">
 			<label>
 				<h2>Special instructions to show on every pad</h2>
 				<textarea
 					onInput={(evt) => dispatch({type: "set-pad-description", value: evt.target.value})}
-					placeholder="e.g. who created the pad, when should it be used, who has the other pads"
+					placeholder="e.g. who created the pad, when should it be used"
 				>{description}</textarea>
 			</label>
 		</div>
@@ -338,20 +323,6 @@ export default function SecretEntryForm({onCreatePad}) {
 			/>
 		</div>
 		<div className="section create-pads-section">
-			<h2>Create secret sharing pads</h2>
-			<div className="hints">
-				<strong>Remember:</strong>
-				<ul>
-					<li>Sets of secret sharing pads are unique and incompatible with
-					previously created pads.</li>
-					
-					<li>Take care when storing or carrying two or more pads at once.</li>
-					
-					<li>Secret sharing pads do not provide protection from targeted,
-					simultaneous theft of multiple pads.</li>
-				</ul>
-			</div>
-			
 			<div className="submission-bar">
 				<label className="number-of-pads">
 					<span>Number of pads:</span>
