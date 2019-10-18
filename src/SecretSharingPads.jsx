@@ -89,7 +89,6 @@ function SecretSharingPad({
 			/>
 			{stringToParagraphs(description)}
 			<Instructions padId={padId} padLetter={padLetter} />
-			<hr />
 			<EncryptedSecrets
 				encryptedSecrets={encryptedSecrets}
 				padColours={padColours}

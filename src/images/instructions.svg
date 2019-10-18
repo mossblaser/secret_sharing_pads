@@ -160,9 +160,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.7511641"
-     inkscape:cx="476.57813"
-     inkscape:cy="716.69765"
+     inkscape:zoom="1.466344"
+     inkscape:cx="523.84272"
+     inkscape:cy="665.9333"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -171,7 +171,7 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:snap-global="false"
+     inkscape:snap-global="true"
      showborder="false"
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
@@ -189,7 +189,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -197,6 +197,33 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       ry="1.372672"
+       rx="1.372672"
+       y="74.220825"
+       x="109.41678"
+       height="57.674389"
+       width="57.674389"
+       id="rect21527"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect21529"
+       width="57.674389"
+       height="57.674389"
+       x="173.17656"
+       y="74.220825"
+       rx="1.372672"
+       ry="1.372672" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect21531"
+       width="57.526592"
+       height="57.526592"
+       x="45.804764"
+       y="74.294724"
+       rx="1.3691545"
+       ry="1.3691545" />
     <g
        style="stroke-width:1.23261833"
        id="g5181-4-3"

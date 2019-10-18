@@ -330,21 +330,22 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.070667"
+     inkscape:zoom="3.525673"
      inkscape:cx="110.21167"
-     inkscape:cy="110.21167"
+     inkscape:cy="118.61764"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="956"
-     inkscape:window-height="1044"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
      inkscape:window-x="0"
-     inkscape:window-y="16"
+     inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:snap-global="true" />
   <metadata
      id="metadata8170">
     <rdf:RDF>
@@ -362,6 +363,11 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-11.836715,-5.6755287)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path21556"
+       d="m 13.532362,5.998505 h 54.929056 c 0.76045,0 1.37266,0.6122121 1.37266,1.3726722 V 62.300225 c 0,0.760458 -0.61221,1.372669 -1.37266,1.372669 H 13.532362 c -0.760456,0 -1.372668,-0.612211 -1.372668,-1.372669 V 7.3711772 c 0,-0.7604601 0.612212,-1.3726722 1.372668,-1.3726722 z"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <g
        id="g12765"
        transform="translate(24.624932,12.365614)">
@@ -493,17 +499,7 @@
              transform="matrix(0.69676141,-0.18669666,0.18669666,0.69676141,32.742294,53.113615)"
              id="g7973">
             <g
-               aria-label="774
-366
-833
-205
-619
-895
-396
-915
-718
-044
-123"
+               aria-label="774 366 833 205 619 895 396 915 718 044 123"
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70333791px;line-height:1.27023613px;font-family:'Comic Book';-inkscape-font-specification:'Comic Book, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#555753;fill-opacity:1;stroke:none;stroke-width:0.45095831px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
                id="text7328">
               <path
@@ -640,17 +636,7 @@
                  id="path5136" />
             </g>
             <g
-               aria-label="306
-698
-282
-878
-500
-153
-718
-153
-282
-956
-877"
+               aria-label="306 698 282 878 500 153 718 153 282 956 877"
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70333791px;line-height:1.27023613px;font-family:'Comic Book';-inkscape-font-specification:'Comic Book, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#555753;fill-opacity:1;stroke:none;stroke-width:0.45095831px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
                id="text7465">
               <path
@@ -787,17 +773,7 @@
                  id="path5203" />
             </g>
             <g
-               aria-label="1080
-1064
-1115
-1083
-1119
-1048
-1114
-1068
-1000
-1000
-1000"
+               aria-label="1080 1064 1115 1083 1119 1048 1114 1068 1000 1000 1000"
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70333791px;line-height:1.27023613px;font-family:'Comic Book';-inkscape-font-specification:'Comic Book, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#555753;fill-opacity:1;stroke:none;stroke-width:0.45095831px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
                id="text7578">
               <path
@@ -978,17 +954,7 @@
                  id="path5292" />
             </g>
             <g
-               aria-label="+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+"
+               aria-label="+ + + + + + + + + + +"
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70333791px;line-height:1.27023613px;font-family:'Comic Book';-inkscape-font-specification:'Comic Book, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#555753;fill-opacity:1;stroke:none;stroke-width:0.45095831px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
                id="text7691">
               <path
@@ -1037,17 +1003,7 @@
                  id="path5315" />
             </g>
             <g
-               aria-label="=
-=
-=
-=
-=
-=
-=
-=
-=
-=
-="
+               aria-label="= = = = = = = = = = ="
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70333791px;line-height:1.27023613px;font-family:'Comic Book';-inkscape-font-specification:'Comic Book, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#555753;fill-opacity:1;stroke:none;stroke-width:0.45095831px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
                id="text7813">
               <path
