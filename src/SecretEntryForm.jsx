@@ -302,8 +302,7 @@ export default function SecretEntryForm({onCreatePad}) {
 			<h1><img className="logo" src={logoWithTextCreator} alt="Secret Sharing Pad"/></h1>
 			
 			<div className="warning">
-				<strong>Information entered below will not be stored or leave your
-				computer.</strong>
+				<strong>Information entered below will not be saved or leave your computer.</strong>
 			</div>
 		</div>
 		<div className="section description">
