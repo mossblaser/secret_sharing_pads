@@ -9,8 +9,8 @@
 Secret sharing pads are a simple, computer-free way to securely share passwords
 with trusted friends and family for use in emergencies.
 
-When you encrypt your passwords using secret sharing pads, the is split amongst
-several printed pads using a technique called [secret
+When you encrypt your passwords using secret sharing pads, the encrypted
+password is split amongst several printed pads using a technique called [secret
 sharing](https://en.wikipedia.org/wiki/Secret_sharing). On their own the pads
 cannot be decrypted but, when any two pads are used together, the secret
 information can be decrypted using just a pen and paper.
